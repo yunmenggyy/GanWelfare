@@ -1,5 +1,9 @@
 package gyy.com.ganwelfare.utils
 
+import android.annotation.SuppressLint
+import android.content.Context
+
+
 /**
  *
  * 创建时间: 2018/12/20
@@ -10,6 +14,12 @@ package gyy.com.ganwelfare.utils
  *
  *
  */
-class Utils{
+@SuppressLint("StaticFieldLeak")
+object Utils{
+    lateinit var context:Context
+
+    lateinit var toastUtils: ToastUtils
+
+
 
 }

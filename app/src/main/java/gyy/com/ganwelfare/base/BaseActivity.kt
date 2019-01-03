@@ -6,16 +6,15 @@ import android.support.v7.app.AppCompatActivity
 
 abstract class BaseActivity:AppCompatActivity(){
 
-     lateinit var baseActivity:BaseActivity
+    public lateinit var mActivity :BaseActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-        baseActivity = this
-
+        mActivity = this
         setContentView(getLayoutId())
-
-
+        initView()
+        initData()
     }
 
 
@@ -23,4 +22,8 @@ abstract class BaseActivity:AppCompatActivity(){
       * 返回布局
       * */
     abstract fun getLayoutId():Int
+
+    abstract fun initData()
+
+    abstract fun initView()
 }

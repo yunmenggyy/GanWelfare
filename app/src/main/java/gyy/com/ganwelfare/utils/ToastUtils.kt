@@ -8,7 +8,6 @@ import rx.android.schedulers.AndroidSchedulers
 
 class ToastUtils(val context: Context){
 
-
     /**
      *
      * 展示提示框
