@@ -1,5 +1,6 @@
 package gyy.com.ganwelfare.net;
 
+import gyy.com.ganwelfare.bean.BaseResponseBean;
 import gyy.com.ganwelfare.bean.GanWelfareBean;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -17,5 +18,5 @@ import java.util.List;
 public interface Api {
 
     @GET(RequestUrls.BEAUTY_IMAGES)
-   Observable<List<GanWelfareBean>> getBeautyImages(@Path("pageSize") String pageSize, @Path("pageIndex") String pageIndex);
+   Observable<BaseResponseBean> getBeautyImages(@Path("pageSize") String pageSize, @Path("pageIndex") String pageIndex);
 }

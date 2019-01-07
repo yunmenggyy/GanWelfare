@@ -3,15 +3,19 @@ package gyy.com.ganwelfare.base
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.tbruyelle.rxpermissions2.RxPermissions
 
 abstract class BaseActivity:AppCompatActivity(){
 
-    public lateinit var mActivity :BaseActivity
+    lateinit var mActivity :BaseActivity
+    lateinit var rxPermission: RxPermissions
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         mActivity = this
+        rxPermission = RxPermissions(this)
+        setWindow()
         setContentView(getLayoutId())
         initView()
         initData()
@@ -26,4 +30,8 @@ abstract class BaseActivity:AppCompatActivity(){
     abstract fun initData()
 
     abstract fun initView()
+
+    open fun setWindow(){
+
+    }
 }

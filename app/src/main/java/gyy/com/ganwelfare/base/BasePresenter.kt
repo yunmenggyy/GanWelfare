@@ -20,8 +20,8 @@ open class BasePresenter{
 
 
     fun <T> toSubscribe(observable: Observable<T>, action1: Action1<T>){
-        observable.observeOn(Schedulers.io())
-            .subscribeOn(AndroidSchedulers.mainThread())
+        observable.observeOn(AndroidSchedulers.mainThread())
+            .subscribeOn(Schedulers.io())
             .subscribe(action1, Action1 {  it.message?.let { it1 -> Utils.toastUtils.showToast(it1) };it.printStackTrace() })
     }
 }

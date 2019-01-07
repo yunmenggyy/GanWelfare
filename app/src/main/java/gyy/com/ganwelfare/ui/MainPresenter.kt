@@ -28,7 +28,8 @@ class MainPresenter(mainView: MainView):BasePresenter(){
     fun getBeautyImages(pageSize:Int, pageIndex:Int){
 
         toSubscribe(HttpManager.getInstance().mHttpApi.getBeautyImages(pageSize.toString(), pageIndex.toString()), Action1 {
-            mMainView.setImags(it)
+            if (!it.error && it.results?.isNotEmpty() == true)
+            mMainView.setImags(it?.results)
         })
     }
 }

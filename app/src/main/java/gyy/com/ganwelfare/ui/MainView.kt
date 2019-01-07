@@ -13,5 +13,5 @@ import gyy.com.ganwelfare.bean.GanWelfareBean
  *
  */
 interface MainView{
-    fun setImags(datas:List<GanWelfareBean>)
+    fun setImags(datas:List<GanWelfareBean>?)
 }

@@ -56,8 +56,7 @@ class HttpManager {
 
     private fun createOkHttpClient(): OkHttpClient {
         val cache = Cache(File(Utils.context.cacheDir, "hkdCache"), (1024 * 1024 * 100).toLong())
-       return OkHttpClient.Builder().cache(cache).build()
+       return OkHttpClient.Builder().cache(cache).addInterceptor(HttpLogInterceptor()).build()
     }
-
 
 }
