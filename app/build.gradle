@@ -56,4 +56,8 @@ dependencies {
 
     //permission
     implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+
+    //下拉刷新
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-31'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-31'//没有使用特殊Header，可以不加这行
 }
