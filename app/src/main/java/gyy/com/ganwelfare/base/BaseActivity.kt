@@ -2,10 +2,11 @@ package gyy.com.ganwelfare.base
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.gyf.immersionbar.ImmersionBar
 import com.tbruyelle.rxpermissions2.RxPermissions
 
-abstract class BaseActivity:AppCompatActivity(){
+abstract class BaseActivity: AppCompatActivity(){
 
     lateinit var mActivity :BaseActivity
     lateinit var rxPermission: RxPermissions
@@ -15,6 +16,8 @@ abstract class BaseActivity:AppCompatActivity(){
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         mActivity = this
         rxPermission = RxPermissions(this)
+        ImmersionBar.with(this).init()
+
         setWindow()
         setContentView(getLayoutId())
         initView()

@@ -31,17 +31,11 @@ class SplashActivity:BaseActivity(){
     override fun initData() {
     }
 
-    override fun setWindow() {
-        requestWindowFeature(Window.FEATURE_NO_TITLE)
-        window.setFlags(
-            WindowManager.LayoutParams. FLAG_FULLSCREEN ,
-            WindowManager.LayoutParams. FLAG_FULLSCREEN);
-    }
 
     @SuppressLint("CheckResult")
     override fun initView() {
         rxPermission.request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.INTERNET)
             .subscribe {
                 if (it){
@@ -61,6 +55,7 @@ class SplashActivity:BaseActivity(){
                 if (aLong >= 2) {
                     val intent = Intent(mActivity, MainActivity::class.java)
                     startActivity(intent)
+                    finish()
                 }
             }
     }

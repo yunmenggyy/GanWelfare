@@ -1,11 +1,11 @@
 package gyy.com.ganwelfare
 
 import android.content.Context
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import gyy.com.ganwelfare.base.BaseActivity
 import gyy.com.ganwelfare.bean.GanWelfareBean
@@ -17,7 +17,7 @@ class MainActivity : BaseActivity(),MainView{
 
     var pageIndex:Int = 0
 
-    private var mainPresenter = MainPresenter(this)
+    private val mainPresenter = MainPresenter(this)
 
 
     override fun getLayoutId(): Int = R.layout.activity_main
@@ -51,7 +51,7 @@ class MainActivity : BaseActivity(),MainView{
         (mainActivity_recycleView.adapter as MyRecycleAdapter).notifyDataSetChanged()
     }
 
-    class MyHolder(view:View):RecyclerView.ViewHolder(view){
+    class MyHolder(view:View): RecyclerView.ViewHolder(view){
         var imageView = view.findViewById<ImageView>(R.id.item_image)
     }
     class MyRecycleAdapter(context:Context, datas:MutableList<GanWelfareBean>?): RecyclerView.Adapter<MyHolder>() {
