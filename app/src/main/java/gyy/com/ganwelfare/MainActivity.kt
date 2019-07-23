@@ -27,13 +27,12 @@ class MainActivity : BaseActivity(),MainView{
     override fun initView() {
         mainActivity_recycleView.layoutManager = GridLayoutManager(this,2)
         mainActivity_recycleView.adapter = MyRecycleAdapter(mActivity,  mutableListOf() )
-        mainActivity_refrushLayout.setOnRefreshListener { mainPresenter.getBeautyImages(10, pageIndex++) }
+        refreshLayout.setOnRefreshListener { mainPresenter.getBeautyImages(10, pageIndex++) }
     }
 
 
     override fun initData() {
-        mainActivity_refrushLayout.isRefreshing = true
-        mainPresenter.getBeautyImages(10, pageIndex++)
+        refreshLayout.autoRefresh()
     }
 
 
@@ -43,7 +42,7 @@ class MainActivity : BaseActivity(),MainView{
      * */
     override fun setImags(datas: List<GanWelfareBean>?) {
         if ( datas == null )  return
-        mainActivity_refrushLayout.isRefreshing = false
+        refreshLayout.finishRefresh()
         (mainActivity_recycleView.adapter as MyRecycleAdapter).mDatas.let {
             it?.clear()
             it?.addAll(datas)
