@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mainActivity_refrushLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mainActivity_recycleView"
-=======
 <com.scwang.smartrefresh.layout.SmartRefreshLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/refreshLayout"
->>>>>>> d5a2539ab31343f1e46334d4770f31a71e599ab0
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#444444"
@@ -59,4 +47,3 @@
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 =======
         </android.support.v4.widget.SwipeRefreshLayout>-->
->>>>>>> d5a2539ab31343f1e46334d4770f31a71e599ab0

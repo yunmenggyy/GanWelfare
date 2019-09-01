@@ -1,5 +1,11 @@
 package gyy.com.ganwelfare.utils;
 
+import android.annotation.SuppressLint;
+import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
+
 /**
  * @author  GuanYangYi
  * json 格式化工具
@@ -65,7 +71,25 @@ public class JsonFormatUtils {
      * @param number 缩进次数。
      * @return 指定缩进次数的字符串。
      */
+    @SuppressLint("CheckResult")
     private static String indent(int number) {
+        Observable.just("1","2", "3").map(new Function<String, Integer>() {
+            @Override
+            public Integer apply(String s) throws Exception {
+                return Integer.valueOf(s);
+            }
+        }).flatMap(new Function<Integer, ObservableSource<String>>() {
+            @Override
+            public ObservableSource<String> apply(Integer integer) throws Exception {
+                return null;
+            }
+        }).subscribe(new Consumer<String>() {
+            @Override
+            public void accept(String s) throws Exception {
+
+            }
+        });
+
         StringBuffer result = new StringBuffer();
         for (int i = 0; i < number; i++) {
             result.append(SPACE);

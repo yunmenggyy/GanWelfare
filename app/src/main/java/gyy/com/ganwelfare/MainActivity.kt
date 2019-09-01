@@ -11,6 +11,8 @@ import gyy.com.ganwelfare.base.BaseActivity
 import gyy.com.ganwelfare.bean.GanWelfareBean
 import gyy.com.ganwelfare.ui.MainPresenter
 import gyy.com.ganwelfare.ui.MainView
+import io.reactivex.Observable
+import io.reactivex.functions.Function
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity(),MainView{

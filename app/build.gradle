@@ -57,7 +57,6 @@ dependencies {
     //permission
     implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
 
-<<<<<<< HEAD
 
     // 基础依赖包，必须要依赖
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0-beta05'
@@ -65,9 +64,9 @@ dependencies {
     implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0-beta05'
     // kotlin扩展（可选）
     implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0-beta05'
-=======
     //下拉刷新
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-31'
     implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-31'//没有使用特殊Header，可以不加这行
->>>>>>> d5a2539ab31343f1e46334d4770f31a71e599ab0
+
+    implementation "android.arch.lifecycle:extensions:1.1.1"
 }
